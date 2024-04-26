@@ -25,7 +25,7 @@ def migrate_test():
 
 def build_test():
     srcs = []
-    srcs.append(os.path.join("out", "test.dp.cpp"))
+    srcs.append(os.path.join("out_codepin_sycl", "test.dp.cpp"))
     return compile_and_link(srcs)
 
 def run_test():
