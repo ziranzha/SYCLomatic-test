@@ -90,16 +90,13 @@ def build_test():
         if not ret:
             print("Error during copying files cmake script depends on:", test_config.command_output)
 
-        ret += call_subprocess("cd out_root && git init && git add ./ && git commit -m \"raw migrated code\"")
-        if not ret:
-            print("Error during run git operation:", test_config.command_output)
-
         # Temporarily low the cmake minimum version required to 3.20.
         ret = call_subprocess("sed -i s/3.24/3.20/g ./out_root/CMakeLists.txt")
         if not ret:
             print("Error during replace cmake minimum version required:", test_config.command_output)
 
-        ret = call_subprocess("mkdir -p out_root/build && cd out_root/build && cmake -DCMAKE_C_COMPILER=icx -DCMAKE_CXX_COMPILER=icpx -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DLLAMA_CUBLAS=ON ../")
+        ret = call_subprocess("cd out_root && git init && git add ./ && git commit -m \"raw migrated code\"" \
+                      " && mkdir -p build && cd build && cmake -DCMAKE_C_COMPILER=icx -DCMAKE_CXX_COMPILER=icpx -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DLLAMA_CUBLAS=ON ../")
         if not ret:
             print("Error during cmake configure stage:", test_config.command_output)
         ret = call_subprocess("cd out_root/build && make")
