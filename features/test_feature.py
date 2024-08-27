@@ -83,12 +83,15 @@ def migrate_test():
             src.append(os.path.abspath(os.path.join(dirpath, filename)))
 
     nd_range_bar_exper = ['grid_sync']
+    root_group_exper = ['grid_sync_root_group'] # Current build only.
     logical_group_exper = ['cooperative_groups', 'cooperative_groups_thread_group', 'cooperative_groups_data_manipulate']
     uniform_group_exper = ['cooperative_group_coalesced_group']
     experimental_bfloat16_tests = ['math-experimental-bf16', 'math-experimental-bf162']
 
     if test_config.current_test in nd_range_bar_exper:
         src.append(' --use-experimental-features=nd_range_barrier ')
+    if test_config.current_test in root_group_exper:
+        src.append(' --use-experimental-features=root-group ')
     if test_config.current_test == "user_defined_rules":
         src.append(' --rule-file=./user_defined_rules/rules.yaml')
     if test_config.current_test in logical_group_exper:
