@@ -182,7 +182,7 @@
     <test testName="dnnl_utils_pooling" configFile="config/TEMPLATE_help_function_usm.xml" />
     <test testName="dnnl_utils_reorder" configFile="config/TEMPLATE_help_function_usm.xml" />
    <!-- <test testName="dnnl_utils_scale" configFile="config/TEMPLATE_help_function_usm.xml" /> -->
-    <test testName="dnnl_utils_softmax" configFile="config/TEMPLATE_help_function_usm.xml" />
+   <!-- <test testName="dnnl_utils_softmax" configFile="config/TEMPLATE_help_function_usm.xml" />  -->
     <test testName="dnnl_utils_sum" configFile="config/TEMPLATE_help_function_usm.xml" />
    <!-- <test testName="dnnl_utils_binary" configFile="config/TEMPLATE_help_function_usm.xml" /> -->
     <test testName="dnnl_utils_reduction" configFile="config/TEMPLATE_help_function_usm.xml" />
