@@ -14,6 +14,7 @@
     <test testName="asm_shfl_sync" configFile="config/TEMPLATE_asm_excluding_syclcompat.xml" />
     <test testName="asm_shfl" configFile="config/TEMPLATE_asm_excluding_syclcompat.xml" />
     <test testName="asm_shfl_sync_with_exp" configFile="config/TEMPLATE_asm_excluding_syclcompat.xml" />
+    <test testName="asm_membar_fence" configFile="config/TEMPLATE_asm_excluding_syclcompat.xml" />
     <test testName="asm_arith" configFile="config/TEMPLATE_asm.xml" />
     <test testName="asm_optimize" configFile="config/TEMPLATE_asm.xml" />
     <test testName="thrust-op" configFile="config/TEMPLATE_thrust_op.xml" />
