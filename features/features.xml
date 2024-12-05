@@ -11,10 +11,10 @@
     <test testName="asm_vinst" configFile="config/TEMPLATE_asm_excluding_syclcompat.xml" />
     <test testName="asm_v2inst" configFile="config/TEMPLATE_asm_excluding_syclcompat.xml" />
     <test testName="asm_v4inst" configFile="config/TEMPLATE_asm_excluding_syclcompat.xml" />
-    <test testName="asm_shfl_sync" configFile="config/TEMPLATE_asm_excluding_syclcompat.xml" />
-    <test testName="asm_shfl" configFile="config/TEMPLATE_asm_excluding_syclcompat.xml" />
-    <test testName="asm_shfl_sync_with_exp" configFile="config/TEMPLATE_asm_excluding_syclcompat.xml" />
-    <test testName="asm_membar_fence" configFile="config/TEMPLATE_asm_excluding_syclcompat.xml" />
+    <test testName="asm_shfl_sync" configFile="config/TEMPLATE_asm.xml" />
+    <test testName="asm_shfl" configFile="config/TEMPLATE_asm.xml" />
+    <test testName="asm_shfl_sync_with_exp" configFile="config/TEMPLATE_asm.xml" />
+    <test testName="asm_membar_fence" configFile="config/TEMPLATE_asm.xml" />
     <test testName="asm_arith" configFile="config/TEMPLATE_asm.xml" />
     <test testName="asm_optimize" configFile="config/TEMPLATE_asm.xml" />
     <test testName="thrust-op" configFile="config/TEMPLATE_thrust_op.xml" />
@@ -122,16 +122,16 @@
     <test testName="math-direct" configFile="config/TEMPLATE_math_skip_cuda_backend.xml" />
     <test testName="math-drcp" configFile="config/TEMPLATE_math_drcp.xml"  splitGroup="double" />
     <test testName="math-emu" configFile="config/TEMPLATE_math.xml" />
-    <test testName="math-emu-bf16" configFile="config/TEMPLATE_math_after_11_excluding_syclcompat.xml" />
+    <test testName="math-emu-bf16" configFile="config/TEMPLATE_math_after_11.xml" />
     <test testName="math-emu-bf16-conv-double" configFile="config/TEMPLATE_math_after_11_skip_double.xml" splitGroup="double"/>
     <test testName="math-emu-bf162-after12" configFile="config/TEMPLATE_math_after_12.xml" />
-    <test testName="math-emu-bf162" configFile="config/TEMPLATE_math_after_11_excluding_syclcompat.xml" />
+    <test testName="math-emu-bf162" configFile="config/TEMPLATE_math_after_11.xml" />
     <test testName="math-emu-double" configFile="config/TEMPLATE_math_skip_double.xml" splitGroup="double"/>
     <test testName="math-emu-float" configFile="config/TEMPLATE_math_skip_double.xml" splitGroup="double"/>
     <test testName="math-emu-half" configFile="config/TEMPLATE_math_after_9.xml" />
-    <test testName="math-emu-half-after11" configFile="config/TEMPLATE_math_after_11_excluding_syclcompat.xml" />
+    <test testName="math-emu-half-after11" configFile="config/TEMPLATE_math_after_11.xml" />
     <test testName="math-emu-half2" configFile="config/TEMPLATE_math_after_9.xml" />
-    <test testName="math-emu-half2-after11" configFile="config/TEMPLATE_math_after_11_excluding_syclcompat.xml" />
+    <test testName="math-emu-half2-after11" configFile="config/TEMPLATE_math_after_11.xml" />
     <test testName="math-emu-half2-after12" configFile="config/TEMPLATE_math_after_12.xml" />
     <test testName="math-emu-simd" configFile="config/TEMPLATE_math_excluding_syclcompat.xml" />
     <test testName="math-emu-simd-after12" configFile="config/TEMPLATE_math_excluding_syclcompat.xml" />
@@ -139,8 +139,8 @@
     <test testName="math-funnelshift" configFile="config/TEMPLATE_math_funnelshift.xml" />
     <test testName="math-habs" configFile="config/TEMPLATE_math_habs.xml" splitGroup="double" />
     <test testName="math-half-raw" configFile="config/TEMPLATE_math_after_11.xml"/>
-    <test testName="math-experimental-bf16" configFile="config/TEMPLATE_math_after_11_excluding_syclcompat.xml" />
-    <test testName="math-experimental-bf162" configFile="config/TEMPLATE_math_after_11_excluding_syclcompat.xml" />
+    <test testName="math-experimental-bf16" configFile="config/TEMPLATE_math_after_11.xml" />
+    <test testName="math-experimental-bf162" configFile="config/TEMPLATE_math_after_11.xml" />
     <test testName="math-ext-bf16-conv" configFile="config/TEMPLATE_math_after_11_skip_cuda_backend.xml" />
     <test testName="math-ext-bf16-conv-double" configFile="config/TEMPLATE_math_after_11_skip_double_skip_cuda_backend.xml" splitGroup="double"/>
     <test testName="math-ext-double" configFile="config/TEMPLATE_math_skip_double_skip_cuda_backend.xml" splitGroup="double"/>

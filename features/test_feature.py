@@ -128,6 +128,8 @@ def migrate_test():
         src.append(' --rule-file=./math_intel_specific/intel_specific_math.yaml')
     if test_config.current_test.startswith('math-ext-'):
         src.append(' --use-dpcpp-extensions=intel_device_math')
+    if test_config.current_test == 'math-emu-bf162' or test_config.current_test == 'math-emu-half2-after11':
+        src.append(' --extra-arg="-DUSE_DPCT_HELPER"')
     if test_config.current_test in occupancy_calculation_exper:
         src.append(' --use-experimental-features=occupancy-calculation ')
     if test_config.current_test == 'feature_profiling':

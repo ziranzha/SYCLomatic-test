@@ -80,9 +80,11 @@ void testHadd2_rnCases(const vector<pair<half2_pair, h2i_pair>> &TestCases) {
 
 __global__ void hcmadd(float *const Result, __half2 Input1, __half2 Input2,
                        __half2 Input3) {
+#ifdef USE_DPCT_HELPER
   auto ret = __hcmadd(Input1, Input2, Input3);
   Result[0] = __low2float(ret);
   Result[1] = __high2float(ret);
+#endif
 }
 
 void testHcmaddCases(const vector<pair<half2_vector, h2i_pair>> &TestCases) {
@@ -92,6 +94,7 @@ void testHcmaddCases(const vector<pair<half2_vector, h2i_pair>> &TestCases) {
     hcmadd<<<1, 1>>>(Result, TestCase.first[0], TestCase.first[1],
                      TestCase.first[2]);
     cudaDeviceSynchronize();
+#ifdef USE_DPCT_HELPER
     checkResult("__hcmadd", TestCase.first, TestCase.second.first,
                 {Result[0], Result[1]}, TestCase.second.second);
     if (TestCase.first.size() != 3) {
@@ -99,6 +102,7 @@ void testHcmaddCases(const vector<pair<half2_vector, h2i_pair>> &TestCases) {
       cout << " ---- failed" << endl;
       return;
     }
+#endif
   }
 }
 
